@@ -1,0 +1,11 @@
+[Unit]
+Description=Display current network status on Unicorn HAT HD LED matrix
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 -u /home/ubuntu/display.py /home/ubuntu/wifi-router-status.json
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

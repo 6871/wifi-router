@@ -1,0 +1,12 @@
+[Unit]
+Description=Write device status to file for wifi-router-display process
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/wifi-router-status.sh /home/ubuntu/wifi-router-status.json
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
